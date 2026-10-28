@@ -1,40 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="sv">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Boka bord – Kafé Kardemumma</title>
-</head>
-<body>
-  <header>
-    <h1>Kafé Kardemumma</h1>
-    <nav aria-label="Huvudmeny">
-      <ul>
-        <li><a href="index.html">Startsida</a></li>
-        <li><a href="index.html#meny">Meny</a></li>
-        <li><a href="kontakt.html" aria-current="page">Boka bord</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boka bord – Kafé Kardemumma</title>
+  </head>
+  <body>
+    <header>
+      <h1>Kafé Kardemumma</h1>
+      <nav aria-label="Huvudmeny">
+        <ul>
+          <li><a href="index.html">Startsida</a></li>
+          <li><a href="index.html#meny">Meny</a></li>
+          <li>
+            <a href="kontakt.html" aria-current="page">Boka bord</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-  <main>
-    <h2>Boka bord</h2>
-    <!-- TODO: Skriv ingressen från innehall.md -->
+    <main>
+      <h2>Boka bord</h2>
+      <p class="intro">
+        Fyll i formuläret nedan för att boka bord hos oss. Vi återkommer med en
+        bekräftelse via e-post.
+      </p>
 
-    <form action="#" method="post">
-      <!-- TODO 1: fält för namn, e-post, telefon, datum (label + input med for/id) -->
-      <!-- TODO 2: rullista för antal personer, textarea för önskemål -->
-      <!-- TODO 3: fieldset + legend för kostönskemål och bekräftelsesätt -->
-      <!-- TODO 4: samtyckeskryssruta (required) och skickaknapp -->
-    </form>
-  </main>
+      <form action="#" method="post">
+        <!-- TODO 1: fält för namn, e-post, telefon, datum (label + input med for/id) -->
+        <!-- TODO 2: rullista för antal personer, textarea för önskemål -->
+        <!-- TODO 3: fieldset + legend för kostönskemål och bekräftelsesätt -->
+        <!-- TODO 4: samtyckeskryssruta (required) och skickaknapp -->
 
-  <footer>
-    <p>&copy; 2026 Kafé Kardemumma</p>
-    <address>
-      Fiktivgatan 1, 111 11 Stockholm<br>
-      <a href="mailto:hej@kardemumma.example">hej@kardemumma.example</a>
-    </address>
-  </footer>
-</body>
+        <label for="name">Namn *</label>
+        <input type="text" id="name" name="name" required />
+        <label for="email">E-post *</label>
+        <input type="email" id="email" name="email" required />
+        <label for="phone">Telefon (valfritt)</label>
+        <input type="tel" id="phone" name="phone" />
+        <label for="date">Datum *</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="antal">Antal personer *</label>
+        <select id="antal" name="antal" required>
+          <option value="">Antal personer *</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="fler">Fler</option>
+        </select>
+        <label for="onskemal">Övriga önskemål</label>
+        <textarea id="onskemal" name="onskemal"></textarea>
+        <fieldset>
+          <legend>Kostönskemål</legend>
+          <label for="chkVegetarisk"> Vegetarisk </label>
+          <input
+            type="checkbox"
+            id="chkVegetarisk"
+            name="kost"
+            value="vegetarisk"
+          />
+          <label for="chkVegansk"> Vegansk </label>
+          <input type="checkbox" id="chkVegansk" name="kost" value="vegansk" />
+          <label for="chkGlutenfri"> Glutenfri </label>
+          <input
+            type="checkbox"
+            id="chkGlutenfri"
+            name="kost"
+            value="glutenfri"
+          />
+        </fieldset>
+        <fieldset>
+          <legend>Hur vill du få bekräftelsen? *</legend>
+          <label for="rdoEmail">E-post</label>
+          <input
+            id="rdoEmail"
+            type="radio"
+            name="svar"
+            value="epost"
+            required
+          />
+          <label for="rdoSMS">SMS</label>
+          <input id="rdoSMS" type="radio" name="svar" value="sms" required />
+        </fieldset>
+        <input id="chkConsent" type="checkbox" name="samtycke" required />
+        <label for="chkConsent">
+          Jag godkänner att Kafé Kardemumma sparar mina uppgifter för bokningen.
+          *
+        </label>
+        <button type="submit">Skicka</button>
+      </form>
+      <div id="formOutput" aria-live="polite">
+        E-post E-postadress * email ja Telefon Telefon (valfritt) tel nej Datum
+        Datum * date ja Antal Antal personer * select: 1, 2, 3, 4, 5 eller fler
+        ja Kost Kostönskemål kryssrutor: Vegetarisk, Vegansk, Glutenfri nej Svar
+        Hur vill du få bekräftelsen? * radioknappar: E-post, SMS ja Önskemål
+        Övriga önskemål textarea nej Samtycke Jag godkänner att Kafé Kardemumma
+        sparar mina uppgifter för bokningen. * kryssruta ja
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Kafé Kardemumma</p>
+      <address>
+        Fiktivgatan 1, 111 11 Stockholm<br />
+        <a href="mailto:hej@kardemumma.example">hej@kardemumma.example</a>
+      </address>
+    </footer>
+  </body>
 </html>
