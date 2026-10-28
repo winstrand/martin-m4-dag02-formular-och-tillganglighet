@@ -27,11 +27,11 @@
       </p>
 
       <form action="#" method="post">
-        <div id="contactInfo">
+        <div id="contact-info">
           <h3>Kontaktuppgifter</h3>
-          <label for="name">Namn *</label>
+          <label for="name">Namn <span aria-hidden="true">*</span></label>
           <input type="text" id="name" name="name" required />
-          <label for="email">E-post *</label>
+          <label for="email">E-post <span aria-hidden="true">*</span></label>
           <input
             type="email"
             id="email"
@@ -45,14 +45,16 @@
           <label for="phone">Telefon (valfritt)</label>
           <input type="tel" id="phone" name="phone" />
         </div>
-        <fieldset id="bookingInfo">
+        <fieldset id="booking-info">
           <legend>Bokningsinformation</legend>
-          <label for="date">Datum *</label>
+          <label for="date">Datum <span aria-hidden="true">*</span></label>
           <input type="date" id="date" name="date" required />
           <div id="select-antal">
-            <label for="antal">Antal personer *</label>
+            <label for="antal"
+              >Antal personer <span aria-hidden="true">*</span></label
+            >
             <select id="antal" name="antal" required>
-              <option value="">Antal personer *</option>
+              <option value="">Antal personer</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -67,55 +69,68 @@
           <textarea id="onskemal" name="onskemal"></textarea>
           <fieldset id="kostonskemal">
             <legend>Kostönskemål</legend>
-            <label for="chkVegetarisk"> Vegetarisk </label>
+            <label for="checkbox-vegetarisk"> Vegetarisk </label>
             <input
               type="checkbox"
-              id="chkVegetarisk"
+              id="checkbox-vegetarisk"
               name="kost"
               value="vegetarisk"
             />
-            <label for="chkVegansk"> Vegansk </label>
+            <label for="checkbox-vegansk"> Vegansk </label>
             <input
               type="checkbox"
-              id="chkVegansk"
+              id="checkbox-vegansk"
               name="kost"
               value="vegansk"
             />
-            <label for="chkGlutenfri"> Glutenfri </label>
+            <label for="checkbox-glutenfri"> Glutenfri </label>
             <input
               type="checkbox"
-              id="chkGlutenfri"
+              id="checkbox-glutenfri"
               name="kost"
               value="glutenfri"
             />
           </fieldset>
           <fieldset id="confirmationMethod">
-            <legend>Hur vill du få bekräftelsen? *</legend>
-            <label for="rdoEmail">E-post</label>
+            <legend>
+              Hur vill du få bekräftelsen? <span aria-hidden="true">*</span>
+            </legend>
+            <label for="radio-email">E-post</label>
             <input
-              id="rdoEmail"
+              id="radio-email"
               type="radio"
               name="svar"
               value="epost"
               required
             />
-            <label for="rdoSMS">SMS</label>
-            <input id="rdoSMS" type="radio" name="svar" value="sms" required />
+            <label for="radio-sms">SMS</label>
+            <input
+              id="radio-sms"
+              type="radio"
+              name="svar"
+              value="sms"
+              required
+            />
           </fieldset>
         </fieldset>
         <fieldset id="consent">
           <legend>Samtycke</legend>
 
-          <input id="chkConsent" type="checkbox" name="samtycke" required />
-          <label for="chkConsent">
+          <input
+            id="checkbox-consent"
+            type="checkbox"
+            name="samtycke"
+            required
+          />
+          <label for="checkbox-consent">
             Jag godkänner att Kafé Kardemumma sparar mina uppgifter för
-            bokningen. *
+            bokningen. <span aria-hidden="true">*</span>
           </label>
         </fieldset>
 
         <button type="submit">Skicka</button>
       </form>
-      <div id="formOutput" aria-live="polite"></div>
+      <div id="form-output" aria-live="polite"></div>
     </main>
 
     <footer>
